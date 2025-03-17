@@ -111,11 +111,11 @@ export default {
             startScrollAnimation: false,
             currentFrame: 0,
             logoFrames: [
-                "/loading-logos/loading-logo-1.svg",
-                "/loading-logos/loading-logo-2.svg",
-                "/loading-logos/loading-logo-3.svg",
-                "/loading-logos/loading-logo-4.svg",
-                "/loading-logos/loading-logo-5.svg",
+                "/loading-logo-1.svg",
+                "/loading-logo-2.svg",
+                "/loading-logo-3.svg",
+                "/loading-logo-4.svg",
+                "/loading-logo-5.svg",
             ],
         };
     },

@@ -111,11 +111,11 @@ export default {
             startScrollAnimation: false,
             currentFrame: 0,
             logoFrames: [
-                "/loading-logo-1.svg",
-                "/loading-logo-2.svg",
-                "/loading-logo-3.svg",
-                "/loading-logo-4.svg",
-                "/loading-logo-5.svg",
+                "/FOSS_GECPKD_Website/loading-logo-1.svg",
+                "/FOSS_GECPKD_Website/loading-logo-2.svg",
+                "/FOSS_GECPKD_Website/loading-logo-3.svg",
+                "/FOSS_GECPKD_Website/loading-logo-4.svg",
+                "/FOSS_GECPKD_Website/loading-logo-5.svg",
             ],
         };
     },

@@ -9,9 +9,4 @@ import vueDevTools from "vite-plugin-vue-devtools";
 export default defineConfig({
   base: "/FOSS_GECPKD_Website/",
   plugins: [vue(), vueJsx(), vueDevTools()],
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
-  },
 });

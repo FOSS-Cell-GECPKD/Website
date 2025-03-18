@@ -1,22 +1,23 @@
 <template>
     <div>
-        <div v-if="loading" class="loading-container">
-            <div
-                class="color-scroll"
-                :class="{ 'animate-scroll': startScrollAnimation }"
-            ></div>
-            <div class="loading-content">
-                <div class="logo-animation">
-                    <img
-                        :src="logoFrames[currentFrame]"
-                        alt="FOSS Club Logo"
-                        class="loading-logo"
-                    />
+        <!-- <div v-if="loading" class="loading-container"> -->
+            <div class="loading-container">
+                <div
+                    class="color-scroll"
+                    :class="{ 'animate-scroll': startScrollAnimation }"
+                ></div>
+                <div class="loading-content">
+                    <div class="logo-animation">
+                        <img
+                            :src="logoFrames[currentFrame]"
+                            alt="FOSS Club Logo"
+                            class="loading-logo"
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div v-else>
+        <!-- <div v-else> -->
+        <div>
             <div class="app-container">
                 <!-- Grid Overlay -->
                 <div class="grid-overlay"></div>
@@ -373,7 +374,7 @@ html {
 .main-content {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     width: 100%;
     max-width: 1200px;
     margin: 40px auto;

@@ -394,7 +394,7 @@ html {
     box-shadow:
     0px -10px 200px #4EF037,
     150px -40px 250px #0C81F6, 
-    -7px 10px 42px #4EF037; 
+    -7px 10px 42px #4df037a0; 
     
 }
 

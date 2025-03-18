@@ -391,6 +391,11 @@ html {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 5;
+    box-shadow:
+    0px -10px 200px #4EF037,
+    150px -40px 250px #0C81F6, 
+    -7px 10px 42px #4df037a0; 
+    
 }
 
 .terminal-header {

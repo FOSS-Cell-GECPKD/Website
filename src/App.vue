@@ -21,8 +21,22 @@
                 <!-- Grid Overlay -->
                 <div class="grid-overlay"></div>
 
-                <!-- Navigation Bar -->
-                <nav class="navbar">
+              
+              
+                <!-- Mobile Navigation (Logo Left, Menu Button Right) -->
+                <div v-if="isMobile" class="mobile-nav">
+                    <div class="mobile-logo">
+                        <img src="/foss-icon.svg" alt="FOSS Club Logo" />
+                        <div class="logo-text">
+                            <h1>FOSS Club</h1>
+                            <p>GEC, Palakkad</p>
+                        </div>
+                    </div>
+                    <button @click="toggleSidebar" class="mobile-menu-btn">☰</button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav v-if="!isMobile" class="navbar">
                     <div class="logo">
                         <img src="/foss-icon.svg" alt="FOSS Club Logo" />
                         <div class="logo-text">
@@ -31,23 +45,23 @@
                         </div>
                     </div>
                     <div class="nav-links">
-                        <router-link to="/" class="nav-link active"
-                            >Home</router-link
-                        >
-                        <router-link to="/events" class="nav-link"
-                            >Events</router-link
-                        >
-                        <router-link to="/about" class="nav-link"
-                            >About</router-link
-                        >
-                        <router-link to="/team" class="nav-link"
-                            >Team</router-link
-                        >
-                        <router-link to="/gallery" class="nav-link"
-                            >Gallery</router-link
-                        >
+                        <router-link to="/" class="nav-link active">Home</router-link>
+                        <router-link to="/events" class="nav-link">Events</router-link>
+                        <router-link to="/about" class="nav-link">About</router-link>
+                        <router-link to="/team" class="nav-link">Team</router-link>
+                        <router-link to="/gallery" class="nav-link">Gallery</router-link>
                     </div>
                 </nav>
+
+                <!-- Mobile Sidebar -->
+                <div v-if="sidebarOpen" class="sidebar">
+                    <button @click="toggleSidebar" class="close-btn">✖</button>
+                    <router-link to="/" class="nav-link">Home</router-link>
+                    <router-link to="/events" class="nav-link">Events</router-link>
+                    <router-link to="/about" class="nav-link">About</router-link>
+                    <router-link to="/team" class="nav-link">Team</router-link>
+                    <router-link to="/gallery" class="nav-link">Gallery</router-link>
+                </div>
 
                 <!-- Main Content -->
                 <div class="main-content">
@@ -117,25 +131,44 @@ export default {
                 "/FOSS_GECPKD_Website/loading-logo-4.svg",
                 "/FOSS_GECPKD_Website/loading-logo-5.svg",
             ],
+            sidebarOpen: false,
+            windowWidth: window.innerWidth,
         };
     },
-    mounted() {
-        // Animate logo sequence
-        const frameInterval = setInterval(() => {
-            this.currentFrame =
-                (this.currentFrame + 1) % this.logoFrames.length;
-        }, 300);
 
-        // Stop animation after 1.5s (logo spin done)
+    computed: {
+        isMobile() {
+            return this.windowWidth <= 768;
+        },
+    },
+    methods: {
+        toggleSidebar() {
+            this.sidebarOpen = !this.sidebarOpen;
+        },
+        updateWindowWidth() {
+            this.windowWidth = window.innerWidth;
+        },
+    },
+    mounted() {
+        window.addEventListener("resize", this.updateWindowWidth);
+
+        // Faster logo animation
+        const frameInterval = setInterval(() => {
+            this.currentFrame = (this.currentFrame + 1) % this.logoFrames.length;
+        }, 200); // Faster frame change
+
+        // Hide loading screen smoothly
         setTimeout(() => {
             clearInterval(frameInterval);
-            this.startScrollAnimation = true; // Trigger scroll
-        }, 1500);
+            this.startScrollAnimation = true;
+        }, 1200); // Reduced delay
 
-        // Hide loader after scroll completes (extra delay if needed)
         setTimeout(() => {
             this.loading = false;
-        }, 3800); // Adjust as needed
+        }, 3500); // Faster transition
+    },
+    beforeDestroy() {
+        window.removeEventListener("resize", this.updateWindowWidth);
     },
 };
 </script>
@@ -297,6 +330,123 @@ html {
     pointer-events: none;
 }
 
+
+.mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #121212;
+    padding: 10px;
+}
+
+.mobile-logo {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Remove the display: none; to show the text */
+.mobile-logo .logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mobile-logo .logo-text h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.mobile-logo .logo-text p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.mobile-menu-btn {
+    font-size: 32px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px; 
+    margin-right: 5px; 
+}
+
+.mobile-menu-btn:hover,
+.mobile-menu-btn:active {
+    opacity: 0.8;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;  
+    width: 250px;
+    height: 100%;
+    background-color: rgba(18, 18, 18, 0.6); 
+    backdrop-filter: blur(10px);  
+    -webkit-backdrop-filter: blur(10px);  
+    border-left: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 100;
+    transform: translateX(100%); 
+    animation: slideInRight 0.3s forwards; 
+}
+
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.sidebar .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.sidebar .close-btn:hover {
+    opacity: 1;
+}
+
+.sidebar .nav-link {
+    padding: 12px 15px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(12, 129, 246, 0.8);
+    color: white;
+    transform: translateX(-5px);
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -350,7 +500,7 @@ html {
 
 .nav-link:hover {
     opacity: 1;
-    color: #0c81f6; /* Vue.js green color */
+    color: #0c81f6; 
 }
 
 .nav-link.active {
@@ -526,10 +676,52 @@ html {
     max-width: 200px;
 }
 
+@media screen and (max-width: 380px) {
+    .mobile-menu-btn {
+        padding: 10px 15px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .mobile-logo img {
+        height: 30px;
+    }
+    
+    .mobile-logo .logo-text h1 {
+        font-size: 14px;
+    }
+    
+    .mobile-logo .logo-text p {
+        font-size: 10px;
+    }
+}
+
+/* Hide navbar on mobile */
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
 @media (max-width: 900px) {
     .main-content {
         flex-direction: column;
     }
+    
+    .terminal-window{
+        box-shadow:
+    0px -10px 200px #4EF037,
+    150px -40px 250px #0C81F6, 
+    -1px 4px 10px #4df03720; 
+    margin-bottom: 1.2rem;
+    }
+
 
     .logos-section {
         margin-left: 0;

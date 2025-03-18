@@ -392,6 +392,7 @@ html {
     cursor: pointer;
     padding: 8px 12px;
     margin-right: 5px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-menu-btn:hover,
@@ -452,7 +453,6 @@ html {
     margin-bottom: 5px;
     border-radius: 8px;
     transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .sidebar .nav-link:hover {

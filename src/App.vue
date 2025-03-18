@@ -1,29 +1,27 @@
 <template>
     <div>
         <!-- <div v-if="loading" class="loading-container"> -->
-            <div class="loading-container">
-                <div
-                    class="color-scroll"
-                    :class="{ 'animate-scroll': startScrollAnimation }"
-                ></div>
-                <div class="loading-content">
-                    <div class="logo-animation">
-                        <img
-                            :src="logoFrames[currentFrame]"
-                            alt="FOSS Club Logo"
-                            class="loading-logo"
-                        />
-                    </div>
+        <div class="loading-container">
+            <div
+                class="color-scroll"
+                :class="{ 'animate-scroll': startScrollAnimation }"
+            ></div>
+            <div class="loading-content">
+                <div class="logo-animation">
+                    <img
+                        :src="logoFrames[currentFrame]"
+                        alt="FOSS Club Logo"
+                        class="loading-logo"
+                    />
                 </div>
             </div>
+        </div>
         <!-- <div v-else> -->
         <div>
             <div class="app-container">
                 <!-- Grid Overlay -->
                 <div class="grid-overlay"></div>
 
-              
-              
                 <!-- Mobile Navigation (Logo Left, Menu Button Right) -->
                 <div v-if="isMobile" class="mobile-nav">
                     <div class="mobile-logo">
@@ -33,7 +31,9 @@
                             <p>GEC, Palakkad</p>
                         </div>
                     </div>
-                    <button @click="toggleSidebar" class="mobile-menu-btn">☰</button>
+                    <button @click="toggleSidebar" class="mobile-menu-btn">
+                        ☰
+                    </button>
                 </div>
 
                 <!-- Desktop Navigation -->
@@ -46,11 +46,17 @@
                         </div>
                     </div>
                     <div class="nav-links">
-                        <router-link to="/" class="nav-link active">Home</router-link>
-                        <router-link to="/events" class="nav-link">Events</router-link>
-                        <router-link to="/about" class="nav-link">About</router-link>
+                        <router-link to="/" class="nav-link active"
+                            >Home</router-link
+                        >
+                        <a
+                            href="https://foss-cell-gecpkd.github.io/Breakpoint/#/"
+                            class="nav-link"
+                            >Breakpoint</a
+                        >
+                        <!-- <router-link to="/about" class="nav-link">About</router-link>
                         <router-link to="/team" class="nav-link">Team</router-link>
-                        <router-link to="/gallery" class="nav-link">Gallery</router-link>
+                        <router-link to="/gallery" class="nav-link">Gallery</router-link> -->
                     </div>
                 </nav>
 
@@ -58,10 +64,14 @@
                 <div v-if="sidebarOpen" class="sidebar">
                     <button @click="toggleSidebar" class="close-btn">✖</button>
                     <router-link to="/" class="nav-link">Home</router-link>
-                    <router-link to="/events" class="nav-link">Events</router-link>
-                    <router-link to="/about" class="nav-link">About</router-link>
+                    <a
+                        href="https://foss-cell-gecpkd.github.io/Breakpoint/#/"
+                        class="nav-link"
+                        >Breakpoint</a
+                    >
+                    <!-- <router-link to="/about" class="nav-link">About</router-link>
                     <router-link to="/team" class="nav-link">Team</router-link>
-                    <router-link to="/gallery" class="nav-link">Gallery</router-link>
+                    <router-link to="/gallery" class="nav-link">Gallery</router-link> -->
                 </div>
 
                 <!-- Main Content -->
@@ -88,12 +98,17 @@
                                     Software (FOSS) ecosystem among GEC-ians.
                                 </p>
                                 <div class="buttons">
-                                    <button class="join-button">
+                                    <button
+                                        class="join-button"
+                                        onclick="window.open('https://chat.whatsapp.com/EUBywB22KKnKfvuOibeKG1', '_blank')"
+                                    >
                                         JOIN US ✨
                                     </button>
-                                    <button class="events-button">
+
+                                    <!-- To be uncommented later -->
+                                    <!-- <button class="events-button">
                                         See Events
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                             <div class="terminal-whitespace"></div>
@@ -155,7 +170,8 @@ export default {
 
         // Faster logo animation
         const frameInterval = setInterval(() => {
-            this.currentFrame = (this.currentFrame + 1) % this.logoFrames.length;
+            this.currentFrame =
+                (this.currentFrame + 1) % this.logoFrames.length;
         }, 200); // Faster frame change
 
         // Hide loading screen smoothly
@@ -331,7 +347,6 @@ html {
     pointer-events: none;
 }
 
-
 .mobile-nav {
     display: flex;
     justify-content: space-between;
@@ -375,8 +390,8 @@ html {
     color: white;
     border: none;
     cursor: pointer;
-    padding: 8px 12px; 
-    margin-right: 5px; 
+    padding: 8px 12px;
+    margin-right: 5px;
 }
 
 .mobile-menu-btn:hover,
@@ -384,26 +399,24 @@ html {
     opacity: 0.8;
 }
 
-
 .sidebar {
     position: fixed;
     top: 0;
-    right: 0;  
+    right: 0;
     width: 250px;
     height: 100%;
-    background-color: rgba(18, 18, 18, 0.6); 
-    backdrop-filter: blur(10px);  
-    -webkit-backdrop-filter: blur(10px);  
-    border-left: 1px solid rgba(255, 255, 255, 0.1); 
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); 
+    background-color: rgba(18, 18, 18, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     padding: 20px;
     z-index: 100;
-    transform: translateX(100%); 
-    animation: slideInRight 0.3s forwards; 
+    transform: translateX(100%);
+    animation: slideInRight 0.3s forwards;
 }
-
 
 @keyframes slideInRight {
     from {
@@ -501,7 +514,7 @@ html {
 
 .nav-link:hover {
     opacity: 1;
-    color: #0c81f6; 
+    color: #0c81f6;
 }
 
 .nav-link.active {
@@ -543,10 +556,9 @@ html {
     position: relative;
     z-index: 5;
     box-shadow:
-    0px -10px 200px #4EF037,
-    150px -40px 250px #0C81F6, 
-    -7px 10px 42px #4df037a0; 
-    
+        0px -10px 200px #4ef037,
+        150px -40px 250px #0c81f6,
+        -7px 10px 42px #4df037a0;
 }
 
 .terminal-header {
@@ -629,7 +641,8 @@ html {
 }
 
 .join-button:hover {
-    /* background-color: #34a573; */
+    background-color: rgba(65, 184, 131, 1);
+    border-color: #34a573;
 }
 
 .events-button {
@@ -687,11 +700,11 @@ html {
     .mobile-logo img {
         height: 30px;
     }
-    
+
     .mobile-logo .logo-text h1 {
         font-size: 14px;
     }
-    
+
     .mobile-logo .logo-text p {
         font-size: 10px;
     }
@@ -714,15 +727,14 @@ html {
     .main-content {
         flex-direction: column;
     }
-    
-    .terminal-window{
-        box-shadow:
-    0px -10px 200px #4EF037,
-    150px -40px 250px #0C81F6, 
-    -1px 4px 10px #4df03720; 
-    margin-bottom: 1.2rem;
-    }
 
+    .terminal-window {
+        box-shadow:
+            0px -10px 200px #4ef037,
+            150px -40px 250px #0c81f6,
+            -1px 4px 10px #4df03720;
+        margin-bottom: 1.2rem;
+    }
 
     .logos-section {
         margin-left: 0;

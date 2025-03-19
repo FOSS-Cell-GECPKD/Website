@@ -32,7 +32,9 @@
                         </div>
                     </div>
                     <button @click="toggleSidebar" class="mobile-menu-btn">
-                        ☰
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="21" viewBox="0 0 28 21" fill="none">
+                            <path d="M0.263184 2.23792H27.3803M0.263184 10.4699H27.3803M0.263184 18.2177H27.3803" stroke="#787878" stroke-width="3.87388"/>
+                        </svg>
                     </button>
                 </div>
 
@@ -61,7 +63,7 @@
                 </nav>
 
                 <!-- Mobile Sidebar -->
-                <div v-if="sidebarOpen" class="sidebar">
+                <div v-if="sidebarOpen" class="sidebar" :class="{ 'closing': sidebarClosing }">
                     <button @click="toggleSidebar" class="close-btn">✖</button>
                     <router-link to="/" class="nav-link">Home</router-link>
                     <a
@@ -111,7 +113,7 @@
                                     </button> -->
                                 </div>
                             </div>
-                            <div class="terminal-whitespace"></div>
+                            <div v-if="!isMobile" class="terminal-whitespace"></div>
                         </div>
                     </div>
 
@@ -148,19 +150,32 @@ export default {
                 "/FOSS_GECPKD_Website/loading-logo-5.svg",
             ],
             sidebarOpen: false,
+            sidebarClosing: false,
             windowWidth: window.innerWidth,
         };
     },
 
     computed: {
         isMobile() {
-            return this.windowWidth <= 768;
+            return this.windowWidth <= 768; // 768px is the breakpoint for mobile
         },
     },
     methods: {
         toggleSidebar() {
-            this.sidebarOpen = !this.sidebarOpen;
+            if (this.sidebarOpen) {
+                // Start the closing animation
+                this.sidebarClosing = true;
+                // Wait for animation to complete before setting sidebarOpen to false
+                setTimeout(() => {
+                    this.sidebarOpen = false;
+                    this.sidebarClosing = false;
+                }, 300); // Match animation duration
+            } else {
+                this.sidebarOpen = true;
+                this.sidebarClosing = false;
+            }
         },
+
         updateWindowWidth() {
             this.windowWidth = window.innerWidth;
         },
@@ -197,6 +212,16 @@ export default {
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Disable image dragging */
+img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  touch-action: none; 
+}
+
+
 
 body,
 html {
@@ -358,6 +383,7 @@ html {
 .mobile-logo {
     display: flex;
     align-items: center;
+    margin-left: 10px;
 }
 
 .mobile-logo img {
@@ -385,14 +411,15 @@ html {
 }
 
 .mobile-menu-btn {
-    font-size: 32px;
-    background: none;
-    color: white;
     border: none;
+    background: none;
     cursor: pointer;
-    padding: 8px 12px;
-    margin-right: 5px;
     -webkit-tap-highlight-color: transparent;
+    margin-top: 10px;
+    /* font-size: 32px; */
+    /* color: white; */
+    /* padding: 8px 0 8px 12px; */
+    /* margin-right: 5px; */
 }
 
 .mobile-menu-btn:hover,
@@ -428,7 +455,21 @@ html {
     }
 }
 
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.sidebar.closing {
+    animation: slideOutRight 0.3s forwards;
+}
+
 .sidebar .close-btn {
+    -webkit-tap-highlight-color: transparent; /* Removes highlight on tap */
     background: none;
     border: none;
     color: white;
@@ -438,6 +479,8 @@ html {
     margin-bottom: 20px;
     opacity: 0.8;
     transition: opacity 0.2s;
+    
+    
 }
 
 .sidebar .close-btn:hover {
@@ -537,10 +580,9 @@ html {
 .main-content {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     width: 100%;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 7% auto;
     padding: 0 20px;
     position: relative;
     z-index: 5;
@@ -591,29 +633,30 @@ html {
     background-color: #27c93f;
 }
 
+
 .terminal-body {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 20px;
-    padding: 30px;
-    font-family: Poppins;
-    font-style: italic;
-    font-weight: 600;
-    word-wrap: break-word;
+        display: grid;
+        gap: 20px;
+        /* grid-template-columns: 3fr 1fr; */
+        padding: 30px;
+        font-family: Poppins;
+        font-style: italic;
+        font-weight: 600;
+        word-wrap: break-word;
 }
 
 .terminal-content {
 }
 
 .main-title {
-    font-size: 36px;
+    /* font-size: 36px; */
     font-weight: bold;
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .emoji {
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .description {
@@ -673,30 +716,29 @@ html {
     margin-top: 50px;
 }
 
-.logo-card {
-    background-color: rgba(255, 255, 255, 0.2);
+/* experimenting for mobile verison */
+ .logo-card {
+    /* background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
-    border-radius: 10px;
-    padding: 30px;
+    border-radius: 10px; */
+    /* padding: 30px; */
+    /* flex-direction: column; */
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); */
+} 
 
 .logo-card img {
     width: 100%;
     max-width: 200px;
 }
 
+
 @media screen and (max-width: 380px) {
     .mobile-menu-btn {
         padding: 10px 15px;
     }
-}
-
-@media screen and (max-width: 380px) {
     .mobile-logo img {
         height: 30px;
     }
@@ -715,18 +757,80 @@ html {
     .navbar {
         display: none;
     }
+
+    .main-title {
+        font-size: 27px;
+    }
+
+    .main-content {  
+        align-items: center;
+        flex-direction: column;
+    }
+    .logo-card{
+        display: flex;
+        justify-content: center; 
+    }
+    .logo-card img {
+        width: 40%;
+        padding: 5px;
+        margin: 15px;
+        max-width: 150px;
+    }
+
+    .logos-section {
+        margin-top: 20px;
+        justify-content: center;    
+        margin: 0 auto; 
+
+    }
+
+
 }
+
 
 @media screen and (min-width: 769px) {
     .mobile-nav {
         display: none;
     }
+
+    .main-title {
+        font-size: 36px;
+    }
+
+    .terminal-body {
+        grid-template-columns: 3fr 1fr;
+}
+
+    .main-content {
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        /* width: 100%; */
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 5;
+    }
+
+
+
+    .logo-card {
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        padding: 30px;
+        flex-direction: column;
+        /* display: flex; */
+        /* align-items: center; */
+        /* gap: 30px; */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
 }
 
 @media (max-width: 900px) {
-    .main-content {
-        flex-direction: column;
-    }
+    
 
     .terminal-window {
         box-shadow:
@@ -736,13 +840,19 @@ html {
         margin-bottom: 1.2rem;
     }
 
-    .logos-section {
-        margin-left: 0;
-        margin-top: 20px;
-    }
-
-    .nav-links {
-        display: none;
-    }
 }
+
+@media (min-width: 900px) {
+
+
+    .logo-card img {
+    width: 100%;
+    max-width: 200px;
+}
+
+
+
+}
+    
+
 </style>

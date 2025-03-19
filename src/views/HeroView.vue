@@ -9,7 +9,7 @@
                 <img src="/foss-icon.svg" alt="FOSS Club Logo" />
                 <div class="logo-text">
                     <h1>FOSS Club</h1>
-                    <p>GEC, Palakkad</p>
+                    <p>GEC Palakkad</p>
                 </div>
             </div>
             <button @click="toggleSidebar" class="mobile-menu-btn">
@@ -35,7 +35,7 @@
                 <img src="/foss-icon.svg" alt="FOSS Club Logo" />
                 <div class="logo-text">
                     <h1>FOSS Club</h1>
-                    <p>GEC, Palakkad</p>
+                    <p>GEC Palakkad</p>
                 </div>
             </div>
             <div class="nav-links">
@@ -181,6 +181,7 @@ export default {
     align-items: center;
     background: var(--background-color);
     padding: 10px;
+    padding-bottom: 80px;
 }
 
 .mobile-logo {

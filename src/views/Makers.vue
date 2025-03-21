@@ -1,7 +1,7 @@
 <template>
     <!-- Main Content -->
     <div class="makers-intro">
-        <div>
+        <div class="about-maker-otm">
             <h1 class="main-title">
                 Maker Of The Month <span class="emoji">💎</span>
             </h1>
@@ -78,5 +78,28 @@ export default defineComponent({
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+@media (max-width: 768px) {
+    .makers-intro {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 1.5rem; /* You can adjust the gap for mobile if needed */
+    }
+
+    .makers-intro > div:first-child {
+        order: 1;
+        text-align: center;
+    }
+
+    .main-title,
+    .description {
+        text-align: center;
+    }
+
+    .animation-container {
+        order: 2;
+        height: 300px; /* Optionally adjust height for mobile */
+    }
 }
 </style>

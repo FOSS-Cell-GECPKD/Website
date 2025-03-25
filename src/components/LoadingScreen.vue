@@ -23,6 +23,7 @@ export default {
         return {
             startScrollAnimation: false,
             currentFrame: 0,
+            imagesLoaded: false,
             logoFrames: [
                 "/loading-logo-1.svg",
                 "/loading-logo-2.svg",
@@ -30,23 +31,59 @@ export default {
                 "/loading-logo-4.svg",
                 "/loading-logo-5.svg",
             ],
+            frameInterval: null,
+            loadTimeout: null
         };
     },
-    mounted() {
-        const frameInterval = setInterval(() => {
-            this.currentFrame =
-                (this.currentFrame + 1) % this.logoFrames.length;
-        }, 200);
+    methods: {
+        preloadImages() {
+            const promises = this.logoFrames.map(src => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.src = src;
+                    img.onload = resolve;
+                    img.onerror = reject;
+                });
+            });
 
-        setTimeout(() => {
-            clearInterval(frameInterval);
-            this.startScrollAnimation = true;
-        }, 1200);
+            Promise.all(promises)
+                .then(() => {
+                    this.imagesLoaded = true;
+                    this.startAnimations();
+                })
+                .catch((error) => {
+                    console.error("Some images failed to load", error);
+                    // Fallback: start animations anyway
+                    this.imagesLoaded = true;
+                    this.startAnimations();
+                });
+        },
+        startAnimations() {
+            // Start frame animation
+            this.frameInterval = setInterval(() => {
+                this.currentFrame = (this.currentFrame + 1) % this.logoFrames.length;
+            }, 200);
 
-        setTimeout(() => {
-            this.$emit("loading-complete");
-        }, 3500);
+            // Start scroll animation after 1.2 seconds
+            setTimeout(() => {
+                clearInterval(this.frameInterval);
+                this.startScrollAnimation = true;
+            }, 1200);
+
+            // Emit complete event after 3.5 seconds
+            this.loadTimeout = setTimeout(() => {
+                this.$emit("loading-complete");
+            }, 3500);
+        }
     },
+    mounted() {
+        this.preloadImages();
+    },
+    beforeUnmount() {
+        // Clean up intervals and timeouts
+        if (this.frameInterval) clearInterval(this.frameInterval);
+        if (this.loadTimeout) clearTimeout(this.loadTimeout);
+    }
 };
 </script>
 

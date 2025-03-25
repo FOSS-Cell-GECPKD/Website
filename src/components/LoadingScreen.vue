@@ -24,11 +24,11 @@ export default {
             startScrollAnimation: false,
             currentFrame: 0,
             logoFrames: [
-                "/FOSS_GECPKD_Website/loading-logo-1.svg",
-                "/FOSS_GECPKD_Website/loading-logo-2.svg",
-                "/FOSS_GECPKD_Website/loading-logo-3.svg",
-                "/FOSS_GECPKD_Website/loading-logo-4.svg",
-                "/FOSS_GECPKD_Website/loading-logo-5.svg",
+                "/loading-logo-1.svg",
+                "/loading-logo-2.svg",
+                "/loading-logo-3.svg",
+                "/loading-logo-4.svg",
+                "/loading-logo-5.svg",
             ],
         };
     },
@@ -57,14 +57,12 @@ export default {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #21201e;
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    animation: fadeOut 0.2s ease-in-out forwards;
     animation-delay: 3.5s;
 }
 
@@ -92,7 +90,6 @@ export default {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: #21201e;
     z-index: 9999;
 }
 
@@ -118,9 +115,9 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    height: 300%;
+    height: 200%;
     z-index: 0;
-    background-color: #21201e;
+    background: #21201e;
 }
 .color-scroll::before {
     content: "";
@@ -152,10 +149,4 @@ export default {
     }
 }
 
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        pointer-events: none;
-    }
-}
 </style>

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@splinetool/runtime": "^1.9.79",
+    "@vueuse/motion": "^3.0.3",
     "foss-gecpkd-website": "file:",
     "spline": "^0.0.0",
     "spline-vue": "^0.1.3",

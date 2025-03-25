@@ -1,5 +1,10 @@
 <template>
     <div class="app-container">
+
+        <div id="app-loader" v-if="loading" class="app-loader">
+            <LoadingScreen @loading-complete="loading = false" />
+        </div>
+
         <!-- Grid Overlay -->
         <div class="grid-overlay"></div>
 
@@ -68,10 +73,10 @@
                 >Breakpoint</a
             >
         </div>
-        <LoadingScreen v-if="loading" @loading-complete="loading = false" />
-        <transition v-else name="fade" mode="out-in">
+        <Transition name="fade" mode="out-in">
             <router-view />
-        </transition>
+        </Transition>
+     
     </div>
 </template>
 
@@ -110,12 +115,6 @@ export default {
     },
     mounted() {
         window.addEventListener("resize", this.updateWindowWidth);
-        const currentPath = this.$route.path;
-        if (currentPath === "/") {
-            this.activeLink = null; // Router will handle Home link
-        } else if (currentPath === "/makers") {
-            this.activeLink = null; // Router will handle Makers link
-        }
     },
     beforeDestroy() {
         window.removeEventListener("resize", this.updateWindowWidth);
@@ -124,7 +123,15 @@ export default {
 </script>
 
 <style>
-/* Reset CSS */
+
+.app-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
 * {
     margin: 0;
     padding: 0;
@@ -377,20 +384,5 @@ html {
     border-radius: 20px;
     height: 3px;
     background-color: #0c81f6;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.3s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
-}
-
-.fade-enter-to,
-.fade-leave-from {
-    opacity: 1;
 }
 </style>

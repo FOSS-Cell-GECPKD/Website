@@ -1,7 +1,13 @@
 <template>
     <!-- Main Content -->
     <div class="makers-intro">
-        <div class="terminal-window">
+        <div
+            v-motion
+            :initial="{ opacity: 0, scaleY: 0 }"
+            :enter="{ opacity: 1, scaleY: 1 }"
+            :transition="{ duration: 1000, ease: 'easeOut' }"
+            class="terminal-window"
+        >
             <div class="about-maker-otm">
                 <div class="terminal-header">
                     <div class="terminal-buttons">
@@ -26,7 +32,13 @@
                 </div>
             </div>
         </div>
-        <div class="animation-container">
+        <div
+            v-motion
+            :initial="{ opacity: 0 }"
+            :enter="{ opacity: 1 }"
+            :transition="{ duration: 8000, ease: 'easeOut' }"
+            class="animation-container"
+        >
             <img
                 src="/maker_crystal.gif"
                 alt="Maker Crystal"

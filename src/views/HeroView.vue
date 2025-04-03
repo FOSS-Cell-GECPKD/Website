@@ -1,7 +1,13 @@
 <template>
     <!-- Main Content -->
     <div class="main-content">
-        <div class="terminal-window">
+        <div
+            v-motion
+            :initial="{ opacity: 0, scaleY: 0 }"
+            :enter="{ opacity: 1, scaleY: 1 }"
+            :transition="{ duration: 1000, ease: 'easeOut' }"
+            class="terminal-window"
+        >
             <div class="terminal-header">
                 <div class="terminal-buttons">
                     <div class="terminal-button red"></div>
@@ -35,7 +41,13 @@
         </div>
 
         <div class="logos-section">
-            <div class="logo-card">
+            <div
+                v-motion
+                :initial="{ opacity: 0 }"
+                :enter="{ opacity: 1 }"
+                :transition="{ duration: 8000, ease: 'easeOut' }"
+                class="logo-card"
+            >
                 <img
                     id="foss-united-logo"
                     src="/foss-united-white.svg"

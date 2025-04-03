@@ -56,10 +56,10 @@
             <div class="action-buttons">
                 <div class="spacer"></div>
                 <div class="buttons-group">
-                    <a class="why-button" href="/Breakpoint/#/benefits">
+                    <!-- <a class="why-button" href="/Breakpoint/#/benefits">
                         <HelpCircle />
                         Why Breakpoint
-                    </a>
+                    </a> -->
                     <a
                         class="add-project-button"
                         href="https://opnform.com/forms/my-form-k1tkuv"

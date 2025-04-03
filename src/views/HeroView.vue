@@ -36,8 +36,12 @@
 
         <div class="logos-section">
             <div class="logo-card">
-                <img src="/foss-united-white.svg" alt="FOSS United" />
-                <img src="/icfoss.svg" alt="ICFOSS" />
+                <img
+                    id="foss-united-logo"
+                    src="/foss-united-white.svg"
+                    alt="FOSS United"
+                />
+                <img id="icfoss-logo" src="/icfoss.svg" alt="ICFOSS" />
             </div>
         </div>
     </div>
@@ -63,6 +67,8 @@ export default {
 
 .terminal-window {
     background-color: #1e1e1e;
+    stroke-width: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     overflow: hidden;
     width: 100%;
@@ -71,13 +77,12 @@ export default {
     position: relative;
     z-index: 5;
     box-shadow:
-        0px -10px 200px #4ef037,
-        150px -40px 250px #0c81f6,
-        -7px 10px 42px #4df037a0;
+        -12px 40px 200px rgba(78, 240, 55, 0.3),
+        150px -30px 100px rgba(12, 129, 246, 0.3);
 }
 
 .terminal-header {
-    background-color: #1a1a1a;
+    background-color: rgba(12, 129, 246, 0.1);
     padding: 10px;
     display: flex;
     align-items: center;
@@ -112,7 +117,6 @@ export default {
     /* grid-template-columns: 3fr 1fr; */
     padding: 30px;
     font-family: Poppins;
-    font-style: italic;
     font-weight: 600;
     word-wrap: break-word;
 }
@@ -120,6 +124,7 @@ export default {
 .main-title {
     /* font-size: 36px; */
     font-weight: bold;
+    font-style: italic;
     margin-bottom: 20px;
     line-height: 1.2;
 }
@@ -129,9 +134,10 @@ export default {
 }
 
 .description {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     opacity: 0.8;
+    font-weight: 600;
     margin-bottom: 30px;
 }
 
@@ -187,20 +193,22 @@ export default {
 
 /* experimenting for mobile verison */
 .logo-card {
-    /* background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    border-radius: 10px; */
-    /* padding: 30px; */
-    /* flex-direction: column; */
     display: flex;
     align-items: center;
     gap: 30px;
-    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); */
 }
 
 .logo-card img {
     width: 100%;
     max-width: 200px;
+}
+
+#foss-united-logo {
+    max-width: 130px;
+}
+
+#icfoss-logo {
+    max-width: 170px;
 }
 
 @media screen and (max-width: 380px) {
@@ -268,8 +276,6 @@ export default {
     .main-content {
         display: flex;
         justify-content: center;
-        /* align-items: center; */
-        /* width: 100%; */
         max-width: 1200px;
         margin: 40px auto;
         padding: 0 20px;
@@ -278,14 +284,13 @@ export default {
     }
 
     .logo-card {
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 247, 0.03);
+        stroke-width: 3px;
+        stroke: white;
         backdrop-filter: blur(5px);
         border-radius: 10px;
         padding: 30px;
         flex-direction: column;
-        /* display: flex; */
-        /* align-items: center; */
-        /* gap: 30px; */
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
 }
@@ -293,9 +298,8 @@ export default {
 @media (max-width: 900px) {
     .terminal-window {
         box-shadow:
-            0px -10px 200px #4ef037,
-            150px -40px 250px #0c81f6,
-            -1px 4px 10px #4df03720;
+            -12px 40px 200px rgba(78, 240, 55, 0.3),
+            150px -30px 100px rgba(12, 129, 246, 0.3);
         margin-bottom: 1.2rem;
     }
 }

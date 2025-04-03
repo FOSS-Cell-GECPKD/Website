@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HeroView from "../views/HeroView.vue";
 import MakersView from "../views/Makers.vue";
+import BreakpointView from "../views/Breakpoint.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,11 @@ const router = createRouter({
       path: "/makers",
       name: "makers",
       component: MakersView,
+    },
+    {
+      path: "/breakpoint",
+      name: "breakpoint",
+      component: BreakpointView,
     },
   ],
 });

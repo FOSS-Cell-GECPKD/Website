@@ -1,0 +1,154 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "studentName": "Mohammed Fahad",
+      "projectName": "BlastOff",
+      "description": "A casual endless runner game featuring vector graphics",
+      "tags": ["Game", "Godot", "Art"],
+      "projectLink": "https://ranger-nf.itch.io/blastoff",
+      "githubLink": "https://github.com/Ranger-NF/BlastOff",
+      "image": "https://img.itch.zone/aW1nLzE2NjAzNDg2LmdpZg==/original/Cb3ysj.gif"
+    },
+    {
+      "id": 2,
+      "studentName": "Mohammed Fahad",
+      "projectName": "Personal Website",
+      "description": "Personal website made with hugo",
+      "tags": ["Hugo", "Portfolio"],
+      "githubLink": "https://github.com/Ranger-NF/Personal-Website",
+      "projectLink": "https://justfahad.me/",
+      "image": "https://i.postimg.cc/ZYXDcT2p/personal-site.png"
+    },
+    {
+      "id": 3,
+      "studentName": "N Fadeela",
+      "projectName": "Planto🍃",
+      "description": "A beautifull and powerful website that provides information about plants",
+      "tags": ["Web", "Full Stack","Plants"],
+      "githubLink": "https://github.com/Fadeeii/Planto-",
+      "projectLink": "https://fadeeii.github.io/Planto-/",
+      "image": "https://github.com/user-attachments/assets/c02e1203-3c80-4c59-9d43-cad39ac1116f"
+    },
+    {
+      "id": 4,
+      "studentName": "Viswanatha Kartha V",
+      "projectName": "theDistant",
+      "description": "Blog made with hugo",
+      "tags": ["Hugo", "Blog"],
+      "githubLink": "https://github.com/anima-regem/theDistant",
+      "projectLink": "https://blog.animaregem.me/",
+      "image": "https://i.postimg.cc/CL604mCv/Screenshot-from-2025-02-16-09-50-34.png"
+    },
+    {
+      "id": 5,
+      "studentName": "Viswanatha Kartha V",
+      "projectName": "Gaster",
+      "description": "Who needs to go to Google Maps and search \"CNG Pumps Near Me\", when you can have an app for just that...",
+      "tags": ["Flutter", "Dart", "Google Maps API", "CNG Pumps", "Gas Stations", "Mobile App", "Android", "iOS"],
+      "githubLink": "https://github.com/anima-regem/gaster",
+      "projectLink": "https://github.com/anima-regem/gaster/releases/",
+      "image": "https://media0.giphy.com/media/3ornjWylTTz6e0SHIs/200w.webp"
+    },
+    {
+      "id": 6,
+      "studentName": "Viswanatha Kartha V",
+      "projectName": "bootThief",
+      "description": "Welcome to the most over-engineered way to get book recommendations since your local librarian got replaced by a coffee machine!",
+      "tags": ["Svelte", "SvelteKit", "TailwindCSS", "Groq", "Book", "Recommendations", "Web App"],
+      "githubLink": "https://github.com/anima-regem/bookThief",
+      "projectLink": "https://book-thief-chi.vercel.app/",
+      "image": "https://raw.githubusercontent.com/anima-regem/bookThief/main/static/favicon.png"
+    },
+    {
+      "id": 7,
+      "studentName": "Viswanatha Kartha V",
+      "projectName": "Vyajan",
+      "description": "Tired of senting a message to your whatsapp chats to save your links? Vyajan is here to help you!",
+      "tags": ["Flutter", "Dart", "Mobile App", "Android", "iOS", "Link", "Manager"],
+      "githubLink": "https://github.com/anima-regem/Vyajan",
+      "projectLink": "https://github.com/anima-regem/Vyajan/releases/",
+      "image": "https://i.postimg.cc/sx4YrMmX/You-Tube-Cover-Photo.png"
+    },
+    {
+      "id": 8,
+      "studentName": "Mohammed Fahad, Mohammed Muflih, N Fadeela",
+      "projectName": "താപസഖി (Thaapasakhi)",
+      "description": "🌡️ Temperature based music player",
+      "tags": ["Music", "Arduino", "NodeMCU", "IOT", "useless", "ntfy"],
+      "githubLink": "https://github.com/Ranger-NF/thaapasakhi",
+      "projectLink": "https://github.com/Ranger-NF/thaapasakhi",
+      "image": "https://i.postimg.cc/8kts45wc/thaapasakhi.jpg"
+    },
+    {
+      "id": 9,
+      "studentName": "Mohammed Fahad, Mohammed Shadin, Mohammed Muflih, Aysha Henan, Hima V",
+      "projectName": "Light 'Em Up",
+      "description": "🪩 NodeMCU based whack-a-mole! ",
+      "tags": ["Arcade", "Game", "Arduino", "NodeMCU", "IOT", "Hardware", "Realtime", "Reflex"],
+      "githubLink": "https://github.com/Ranger-NF/light-em-up",
+      "projectLink": "https://github.com/Ranger-NF/light-em-up",
+      "image": "https://i.postimg.cc/VkD8Qrr0/light-em-up.png"
+    },
+    {
+      "id": 10,
+      "studentName": "Mahir Sahal, Mohammed Fahad, Mohammed Muflih",
+      "projectName": "DocuFlow",
+      "description": "An app aimed at reducing the hassle of applying for a document",
+      "tags": ["Helper", "React", "NextJS", "Android", "Document", "Gemini"],
+      "githubLink": "https://github.com/Ranger-NF/DocuFlow",
+      "projectLink": "https://github.com/Ranger-NF/DocuFlow",
+      "image": "https://i.postimg.cc/GhdVL31F/docuflow.jpg"
+    },
+    {
+      "id": 11,
+      "studentName": "Bhdra K N, Ananya R Krishnan, Remya C",
+      "projectName": "No Worries",
+      "description": "This project is a safety focused web applicaton designed to assist users in emergency situations",
+      "tags": ["HTML", "Javascript", "SOS", "Emergency", "ChatBot"],
+      "githubLink": "https://github.com/BHADRAKN/no-worries",
+      "projectLink": "https://bhadrakn.github.io/no-worries/",
+      "image": "https://i.postimg.cc/hP4sZpxn/No-Worries.png"
+    },
+    {
+      "id": 12,
+      "studentName": "Anupama J A", 
+      "projectName": "Portfolio", 
+      "description": " Personal portfolio made using HTML, CSS & JAVASCRIPT ", 
+      "tags": ["HTML", "Javascript", "Portfolio"],
+      "githubLink": "https://github.com/ANUPAMA-JA29/portfolio",
+      "projectLink":"https://anupama-ja29.github.io/portfolio/", 
+      "image": "https://i.postimg.cc/T14WkxRL/Anupama-portfolio.png"
+    },
+    {
+      "id":13,
+      "studentName": "Mohammed Shadin",
+      "projectName": "Crush Compatibility Calculator",
+      "description": "A fun tool to calculate compatibility with your crush",
+      "tags": ["HTML", "CSS", "Javascript", "Flask"],
+      "githubLink": "https://github.com/Scemworks/compat-calc",
+      "projectLink": "https://crush-compat-calc.vercel.app/",
+      "image": "https://raw.githubusercontent.com/Scemworks/compat-calc/refs/heads/main/main.png"
+    },
+    {
+      "id":14,
+      "studentName": "UBU",
+      "projectName": "Doraemon-VA",
+      "description": "Doraemon is a voice-activated personal assistant built with Python. It can manage your schedule, open and close apps, control system volume, browse the web, check system status, and interact through voice commands. Currently in its early stages, this project aims to evolve into a powerful desktop assistant with features like LLM integration, music search, and more.",
+      "tags": ["AI", "Assistant", "Python"],
+      "githubLink": "https://github.com/UBU11/Doraemon-Bot/",
+      "projectLink": "https://github.com/UBU11/Doraemon-Bot/",
+      "image": "https://static.wikia.nocookie.net/96ed89d5-e70d-478b-a7c4-55a94224d064"
+    },
+  {
+      "id":15,
+      "studentName": "Askhay K A",
+      "projectName": "COLDFETCH",
+      "description":"ColdFetch is a lightweight, high-performance command-line tool designed for fetching and displaying system information in a concise and visually appealing manner. Inspired by tools like Neofetch, ColdFetch prioritizes speed and minimal resource usage while providing essential details about the operating system, hardware, and software environment. ",
+      "tags": ["System Info", "CLI", "Lightweight", "Performance", "Open Source"],
+      "githubLink": "https://github.com/akshay-k-a-dev/coldfetch/",
+      "projectLink": "https://github.com/akshay-k-a-dev/coldfetch/",
+      "image": "https://i.postimg.cc/2SHPQ32G/a-terminal-app-with-a-command-line-inter-Q-kp-Mg-Fq-SHm-BNn-SOc-Gz5r-A-f5-Ak9-Ggr-T7i5-Z3s-EN3-BSjw.jpg"
+    }
+  ]
+}

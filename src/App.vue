@@ -1,6 +1,5 @@
 <template>
     <div class="app-container">
-
         <div id="app-loader" v-if="loading" class="app-loader">
             <LoadingScreen @loading-complete="loading = false" />
         </div>
@@ -50,10 +49,11 @@
                 <router-link to="/makers" class="nav-link" active-class="active"
                     >Makers</router-link
                 >
-                <a
-                    href="https://foss-cell-gecpkd.github.io/Breakpoint/#/"
+                <router-link
+                    to="/breakpoint"
                     class="nav-link"
-                    >Breakpoint</a
+                    active-class="active"
+                    >Breakpoint</router-link
                 >
             </div>
         </nav>
@@ -76,7 +76,6 @@
         <Transition name="fade" mode="out-in">
             <router-view />
         </Transition>
-     
     </div>
 </template>
 
@@ -123,7 +122,6 @@ export default {
 </script>
 
 <style>
-
 .app-loader {
     position: fixed;
     top: 0;

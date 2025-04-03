@@ -28,16 +28,9 @@
         </div>
         <div class="animation-container">
             <img
-                v-if="!isAnimationLoaded"
-                src="/maker_crystal.png"
+                src="/maker_crystal.gif"
                 alt="Maker Crystal"
                 class="fallback-image"
-            />
-            <Spline
-                v-show="isAnimationLoaded"
-                class="animation"
-                :scene="scene"
-                @load="onAnimationLoaded"
             />
         </div>
     </div>
@@ -45,22 +38,8 @@
 
 <script>
 import { defineComponent } from "vue";
-import Spline from "spline-vue/v3";
-
 export default defineComponent({
     name: "MakersPage",
-    components: {
-        Spline,
-    },
-    data: () => ({
-        scene: "https://prod.spline.design/nug5ptImZsZ-a4i6/scene.splinecode",
-        isAnimationLoaded: false,
-    }),
-    methods: {
-        onAnimationLoaded() {
-            this.isAnimationLoaded = true;
-        },
-    },
 });
 </script>
 
@@ -165,6 +144,8 @@ export default defineComponent({
     transition: filter 0.4s ease-in-out;
 }
 .fallback-image {
+    transform: scale(1.5);
+    transform-origin: 50% 50%;
     width: 100%;
     height: 100%;
     object-fit: cover;

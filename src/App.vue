@@ -55,6 +55,9 @@
                     active-class="active"
                     >Breakpoint</router-link
                 >
+                <router-link to="/blog" class="nav-link" active-class="active"
+                    >Blogs</router-link
+                >
             </div>
         </nav>
 
@@ -67,10 +70,8 @@
             <button @click="toggleSidebar" class="close-btn">✖</button>
             <router-link to="/" class="nav-link">Home</router-link>
             <router-link to="/makers" class="nav-link">Makers</router-link>
-            <a
-                href="https://foss-cell-gecpkd.github.io/Breakpoint/#/"
-                class="nav-link"
-                >Breakpoint</a
+            <router-link to="/breakpoint" class="nav-link"
+                >Breakpoint</router-link
             >
         </div>
         <Transition name="fade" mode="out-in">

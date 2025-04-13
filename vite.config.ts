@@ -7,4 +7,16 @@ import vueDevTools from "vite-plugin-vue-devtools";
 export default defineConfig({
   base: "/",
   plugins: [vue(), vueJsx(), vueDevTools()],
+  assetsInclude: ["**/*.md"],
+  define: {
+    "process.env": {},
+  },
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
+  optimizeDeps: {
+    include: ["buffer"],
+  },
 });

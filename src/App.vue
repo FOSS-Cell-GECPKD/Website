@@ -73,6 +73,7 @@
             <router-link to="/breakpoint" class="nav-link"
                 >Breakpoint</router-link
             >
+            <router-link to="/blog" class="nav-link">Blogs</router-link>
         </div>
         <Transition name="fade" mode="out-in">
             <router-view />

@@ -21,13 +21,31 @@ import { getPostBySlug } from "../utils/blog.js";
 
 export default {
     name: "BlogPost",
+    metaInfo() {
+        return {
+            title: this.pageTitle,
+            meta: [
+                { property: "og:title", content: this.pageTitle },
+                { property: "og:description", content: this.pageDescription },
+                { property: "og:image", content: this.imageUrl },
+                { property: "og:url", content: window.location.href },
+                { property: "og:type", content: "website" },
+            ],
+        };
+    },
     data() {
         return {
+            pageTitle: "FOSS Club Blog",
+            pageDescription: "Blog page",
+            imageUrl: "https://foss.gecskp.ac.in/foss-icon-black.svg",
             post: null,
         };
     },
     async created() {
         this.post = await getPostBySlug(this.$route.params.slug);
+        this.pageTitle = this.post.title;
+        this.pageDescription = this.post.description;
+        this.imageUrl = this.post.coverImage;
     },
     methods: {
         formatDate(date) {

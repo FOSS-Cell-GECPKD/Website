@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build": "vite build",
+    "build": "vite build  && shx cp .htaccess dist/",
     "type-check": "vue-tsc --build"
   },
   "dependencies": {

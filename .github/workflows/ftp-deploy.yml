@@ -1,44 +1,14 @@
-name: Deploy to Production
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [closed]
-    branches:
-      - main
-
 jobs:
   deploy:
     if: github.event.pull_request.merged == true || github.event_name == 'push'
     runs-on: ubuntu-latest
+    environment: FTP_SERVER
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Debug
-        run: |
-          if [ -n "${{ secrets.FTP_SERVER }}" ]; then
-            echo "FTP_SERVER is set"
-          else
-            echo "FTP_SERVER is NOT set"
-          fi
-
-          if [ -n "${{ secrets.FTP_USERNAME }}" ]; then
-            echo "FTP_USERNAME is set"
-          else
-            echo "FTP_USERNAME is NOT set"
-          fi
-
-          if [ -n "${{ secrets.FTP_PASSWORD }}" ]; then
-            echo "FTP_PASSWORD is set"
-          else
-            echo "FTP_PASSWORD is NOT set"
-          fi
-
       - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}

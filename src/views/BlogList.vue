@@ -2,9 +2,9 @@
     <div class="blog-list">
         <div
             v-motion
-            :initial="{ opacity: 0, scaleY: 0 }"
+            :initial="{ opacity: 0.8, scaleY: 0.8 }"
             :enter="{ opacity: 1, scaleY: 1 }"
-            :transition="{ duration: 1000, ease: 'easeOut' }"
+            :transition="{ duration: 300, ease: 'easeOut' }"
             class="posts"
         >
             <div v-for="post in posts" :key="post.slug" class="post-preview">
@@ -68,7 +68,7 @@ export default {
 .post-entry {
     position: relative;
     border-radius: 10px;
-    background-color: rgba(255, 255, 247, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     stroke-width: 3px;
     stroke: white;
     backdrop-filter: blur(5px);
@@ -126,8 +126,8 @@ export default {
 @media (max-width: 900px) {
     .post-entry {
         justify-content: space-between;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 24px;
         padding-bottom: 18px;
     }
@@ -135,7 +135,6 @@ export default {
     .post-cover {
         object-fit: contain;
         overflow: hidden;
-        border-radius: 8px;
         width: 100%;
     }
 
@@ -153,6 +152,7 @@ export default {
     .date {
         font-size: 10px;
         font-weight: light;
+        padding-top: 15px;
     }
 }
 </style>

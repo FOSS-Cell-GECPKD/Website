@@ -274,6 +274,7 @@ export default {
 
 @media screen and (min-width: 769px) {
     .mobile-nav {
+        padding-top: 20px;
         display: none;
     }
 

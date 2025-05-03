@@ -178,13 +178,14 @@ html {
     width: 100%;
     height: 100%;
     overscroll-behavior: none;
-    overflow-x: hidden;
 }
 
 .app-container {
+    display: grid;
     background-color: var(--background-color);
-    min-height: 100vh;
     width: 100%;
+    min-height: 100vh; /* Fallback if dvh doesnt work*/
+    min-height: 100dvh;
     font-family: "Inter", sans-serif;
     color: var(--text-color);
     padding: 0;
@@ -216,7 +217,6 @@ html {
     align-items: center;
     background: var(--background-color);
     padding: 10px;
-    padding-bottom: 80px;
 }
 
 .mobile-logo {

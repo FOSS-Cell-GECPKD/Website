@@ -28,6 +28,7 @@ export async function getPostList() {
       date: data.date,
       description: data.description,
       coverImage: data.coverImage || null,
+      author: data.author || "Core Team Member",
       content: md.render(content),
     });
   }

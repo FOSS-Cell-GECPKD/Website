@@ -2,6 +2,7 @@
 title: World Map Explorer Takes Flight 🗺️
 date: 2025-03-27
 description: A successful launch event jointly hosted by FOSS Cell GEC Palakkad and IEEE SB GEC Palakkad
+author: Mohammed Fahad
 coverImage: /images/blog/world-map-explorer-release/world-map-explorer-release-poster.jpeg
 ---
 

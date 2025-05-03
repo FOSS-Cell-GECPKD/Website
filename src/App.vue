@@ -124,6 +124,11 @@ export default {
 </script>
 
 <style>
+:root {
+    --background-color: #121212;
+    --text-color: white;
+}
+
 .app-loader {
     position: fixed;
     top: 0;
@@ -150,6 +155,7 @@ body,
 html {
     width: 100%;
     height: 100%;
+    overscroll-behavior: none;
     overflow-x: hidden;
 }
 
@@ -178,7 +184,7 @@ html {
         ),
         linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
-    z-index: 1;
+    z-index: 0;
     pointer-events: none;
 }
 

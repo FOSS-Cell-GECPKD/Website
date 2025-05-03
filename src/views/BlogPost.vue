@@ -5,8 +5,7 @@
         </div>
         <div class="post-header">
             <h1 class="post-title">{{ post.title }}</h1>
-            <p class="description">{{ post.description }}</p>
-            <p class="date">{{ formatDate(post.date) }}</p>
+            <p class="date">{{ post.author }} · {{ formatDate(post.date) }}</p>
         </div>
         <div class="post-content" v-html="post.content"></div>
     </div>
@@ -46,6 +45,7 @@ export default {
         this.pageTitle = this.post.title;
         this.pageDescription = this.post.description;
         this.imageUrl = this.post.coverImage;
+        this.author = this.post.author;
     },
     methods: {
         formatDate(date) {
@@ -61,7 +61,7 @@ export default {
 
 <style scoped>
 .blog-post {
-    font-family: poppins;
+    font-family: Poppins;
     max-width: 800px;
     margin: 0 auto;
     padding-bottom: 100px;
@@ -69,31 +69,31 @@ export default {
 
 .post-title {
     font-weight: bolder;
-    font-size: 36px;
+    font-size: 3em;
 }
 
 .description {
-    font-size: 16px;
-    font-weight: light;
+    font-size: 1.2em;
+    font-weight: lighter;
     padding-bottom: 15px;
 }
 .post-header {
     margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .date {
-    color: #666;
-    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1em;
 }
 
 .post-content {
     display: flex;
     flex-direction: column;
-    line-height: 2;
-    z-index: 10;
-    gap: 16px;
+    line-height: 2.2;
+    gap: 48px;
+    font-size: 1.2em;
 }
 
 .post-content :deep(img) {

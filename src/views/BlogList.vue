@@ -1,6 +1,12 @@
 <template>
     <div class="blog-list">
-        <div class="posts">
+        <div
+            v-motion
+            :initial="{ opacity: 0, scaleY: 0 }"
+            :enter="{ opacity: 1, scaleY: 1 }"
+            :transition="{ duration: 1000, ease: 'easeOut' }"
+            class="posts"
+        >
             <div v-for="post in posts" :key="post.slug" class="post-preview">
                 <router-link
                     class="post-entry"
@@ -60,10 +66,21 @@ export default {
 }
 
 .post-entry {
+    position: relative;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 247, 0.1);
+    stroke-width: 3px;
+    stroke: white;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 1);
     justify-content: space-between;
     display: flex;
     gap: 24px;
-    padding-bottom: 18px;
+    box-shadow:
+        -30px 30px 100px rgba(12, 129, 246, 0.4),
+        12px -30px 100px rgba(252, 251, 45, 0.3);
 }
 
 .post-preview {
@@ -99,6 +116,7 @@ export default {
 }
 
 .post-cover {
+    position: relative;
     object-fit: cover;
     overflow: hidden;
     border-radius: 8px;

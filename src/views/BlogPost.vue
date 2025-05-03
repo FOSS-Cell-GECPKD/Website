@@ -7,7 +7,14 @@
             <h1 class="post-title">{{ post.title }}</h1>
             <p class="date">{{ post.author }} · {{ formatDate(post.date) }}</p>
         </div>
-        <div class="post-content" v-html="post.content"></div>
+        <div
+            v-motion
+            :initial="{ opacity: 0 }"
+            :enter="{ opacity: 1 }"
+            :transition="{ duration: 1000, ease: 'easeOut' }"
+            class="post-content"
+            v-html="post.content"
+        ></div>
     </div>
     <div v-else class="not-found">
         <h2>Post not found</h2>
@@ -89,19 +96,20 @@ export default {
 }
 
 .post-content {
+    font-family: "Cormorant Garamond", serif;
     display: flex;
     flex-direction: column;
-    line-height: 2.2;
+    line-height: 1.8;
     gap: 48px;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 .post-content :deep(img) {
+    position: relative;
     display: block;
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    max-height: 300px;
     height: auto;
 }
 
@@ -145,10 +153,9 @@ export default {
     .post-content {
         display: flex;
         flex-direction: column;
-        text-align: justify;
-        line-height: 2;
-        z-index: 10;
-        gap: 16px;
+        line-height: 1.5;
+        gap: 48px;
+        font-size: 1.4em;
     }
 }
 </style>

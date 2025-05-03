@@ -69,13 +69,15 @@ const openLink = (url) => {
 
 <style scoped>
 .project-card {
+    position: relative;
     background-color: rgba(255, 255, 247, 0.1);
-    border: 1px solid white;
-    border-radius: 0.375rem;
+    stroke-width: 3px;
+    stroke: white;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.2s ease;
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
 }
 
 .project-card:hover {
@@ -83,7 +85,6 @@ const openLink = (url) => {
 }
 
 .project-image {
-    border-bottom: 1px solid white;
     width: 100%;
     height: 12rem;
     object-fit: cover;
@@ -149,10 +150,9 @@ const openLink = (url) => {
 
 .tag {
     padding: 0.25rem 0.75rem;
-    border: 1px solid black;
-    background-color: #fef9c3;
-    color: black;
-    border-radius: 9999px;
+    background-color: #0c81f6;
+    color: white;
+    border-radius: 10px;
     font-size: 0.875rem;
 }
 

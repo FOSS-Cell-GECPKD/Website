@@ -68,12 +68,27 @@
             :class="{ closing: sidebarClosing }"
         >
             <button @click="toggleSidebar" class="close-btn">✖</button>
-            <router-link to="/" class="nav-link">Home</router-link>
-            <router-link to="/makers" class="nav-link">Makers</router-link>
-            <router-link to="/breakpoint" class="nav-link"
+            <router-link @click.native="closeSidebar" to="/" class="nav-link"
+                >Home</router-link
+            >
+            <router-link
+                @click.native="closeSidebar"
+                to="/makers"
+                class="nav-link"
+                >Makers</router-link
+            >
+            <router-link
+                @click.native="closeSidebar"
+                to="/breakpoint"
+                class="nav-link"
                 >Breakpoint</router-link
             >
-            <router-link to="/blog" class="nav-link">Blogs</router-link>
+            <router-link
+                @click.native="closeSidebar"
+                to="/blog"
+                class="nav-link"
+                >Blogs</router-link
+            >
         </div>
         <Transition name="fade" mode="out-in">
             <router-view />
@@ -109,6 +124,13 @@ export default {
                 this.sidebarOpen = true;
                 this.sidebarClosing = false;
             }
+        },
+        closeSidebar() {
+            this.sidebarClosing = true;
+            setTimeout(() => {
+                this.sidebarOpen = false;
+                this.sidebarClosing = false;
+            }, 300);
         },
         updateWindowWidth() {
             this.isMobile = window.innerWidth <= 768;

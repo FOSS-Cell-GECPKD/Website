@@ -86,12 +86,15 @@
                 <div class="spinner"></div>
             </div>
 
-            <div v-else class="projects-grid">
+            <div
+                v-motion
+                :initial="{ opacity: 0 }"
+                :enter="{ opacity: 1 }"
+                :transition="{ duration: 1000, ease: 'easeOut' }"
+                v-else
+                class="projects-grid"
+            >
                 <ProjectCard
-                    v-motion
-                    :initial="{ opacity: 0 }"
-                    :enter="{ opacity: 1 }"
-                    :transition="{ duration: 300, ease: 'easeOut' }"
                     v-for="project in sortedProjects"
                     :key="project.id"
                     :project="project"

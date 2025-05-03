@@ -199,6 +199,16 @@
       "githubLink": "https://github.com/muhammedalima/medcave",
       "projectLink": "https://github.com/muhammedalima/medcave",
       "image": "https://i.postimg.cc/JndLmLWF/medcave-banner.jpg"
+    },
+    {
+      "id": 17,
+      "studentName": " Vishnu Sanal T",
+      "projectName": "WhatsAppCleaner ",
+      "description": "Cleaner for WhatsApp - Clean Redundant Media and Files from Storage ",
+      "tags": ["Kotlin", "Utility", "Mobile App"],
+      "githubLink": "https://github.com/VishnuSanal/WhatsAppCleaner",
+      "projectLink": "https://f-droid.org/packages/com.vishnu.whatsappcleaner/",
+      "image": "https://i.postimg.cc/zDtCmPHR/whatsapp-cleaner.png"
     }
   ]
 }

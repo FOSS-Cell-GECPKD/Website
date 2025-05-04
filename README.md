@@ -1,4 +1,8 @@
-# FOSS Clubs GEC Palakkad Official Website
+# FOSS Club GEC Palakkad: Official Website
+
+<p align="center">
+<img src="docs/website-hero.webp" width="700" height="auto" title="Hero Page of the Website">
+</p>
 
 This repository contains the source code for the official website of the FOSS Clubs (Free and Open Source Software Clubs) at Government Engineering College, Palakkad. The website is built using Vue.js, a progressive JavaScript framework for building user interfaces.
 
@@ -17,13 +21,13 @@ To get a local copy of the project up and running, follow these steps:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/foss-clubs-gec-palakkad/website.git
+   git clone https://github.com/FOSS-Cell-GECPKD/Website.git
    ```
 
 2. Navigate to the project directory:
 
    ```
-   cd website
+   cd Website
    ```
 
 3. Install dependencies:
@@ -35,10 +39,10 @@ To get a local copy of the project up and running, follow these steps:
 4. Start the development server:
 
    ```
-   npm run serve
+   npm run dev
    ```
 
-   The website should now be running at `http://localhost:8080`.
+   The website should now be running at `http://localhost:5173/`.
 
 ## Contributing
 
@@ -66,12 +70,11 @@ Please refer to the [Contribution Guide](CONTRIBUTING.md) for more detailed inst
 
 To maintain a consistent and high-quality codebase, we follow these best practices:
 
-- **Coding Style**: Follow the [Vue.js Style Guide](https://vuejs.org/v2/style-guide/) for consistent code formatting and naming conventions.
+- **Coding Style**: Follow the Vue.js Style Guide for consistent code formatting and naming conventions.
 - **Components**: Modularize the UI into reusable Vue components.
 - **State Management**: Use Vuex for managing the application state, if necessary.
 - **Responsive Design**: Ensure the website is responsive and accessible across different devices and screen sizes.
 - **Performance Optimization**: Optimize the website for better performance by following best practices like code splitting, lazy loading, and minification.
-- **Testing**: Write unit tests and end-to-end tests to ensure code quality and functionality.
 
 ## Code of Conduct
 

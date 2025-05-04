@@ -3,12 +3,12 @@ title: ഒരു OpenSource ചായകഥ ☕️
 date: 2025-04-10
 description: an informal gathering that blended the warmth of a tea party with the excitement of open-source technology and friendly competition.
 author: Mohammed Fahad
-coverImage: /images/blog/os-chaayakdha-2/os-chaayakadha-poster.png
+coverImage: /webp/images/blog/os-chaayakdha-2/os-chaayakadha-poster.webp
 ---
 
 On April 10th, 2025, the FOSS Club hosted "ഒരു OpenSource ചായകഥ" – an informal gathering that blended the warmth of a tea party with the excitement of open-source technology and friendly competition.  It was a resounding success, filled with engaging discussions, exciting games, and a whole lot of camaraderie!
 
-![Event pic 1](/images/blog/os-chaayakdha-2/event-pic-2.jpeg)
+![Event pic 1](/webp/images/blog/os-chaayakdha-2/event-pic-1.webp)
 
 The event kicked off with Fahad providing a fantastic introduction to the FOSS Club itself, along with a sneak peek into the fascinating worlds of Google Arcade and Hack Club.  Arul then expertly guided us through the ins and outs of Google Arcade, answering our burning questions as we sipped on steaming cups of tea.  The perfect blend of information and relaxation!
 

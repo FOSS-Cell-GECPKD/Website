@@ -13,7 +13,8 @@ const md = new MarkdownIt({
 export async function getPostList() {
   const posts = [];
   const markdownFiles = import.meta.glob("../assets/blog/*.md", {
-    as: "raw",
+    query: "?raw",
+    import: "default",
     eager: true,
   });
 

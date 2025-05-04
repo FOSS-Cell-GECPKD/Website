@@ -3,7 +3,7 @@ title: World Map Explorer Takes Flight 🗺️
 date: 2025-03-27
 description: A successful launch event jointly hosted by FOSS Cell GEC Palakkad and IEEE SB GEC Palakkad
 author: Mohammed Fahad
-coverImage: /images/blog/world-map-explorer-release/world-map-explorer-release-poster.jpeg
+coverImage: /webp/images/blog/world-map-explorer-release/world-map-explorer-release-poster.webp
 ---
 
 On March 27th, 2025, the CSE PG Seminar Hall at GEC Palakkad buzzed with excitement as the FOSS Cell GEC Palakkad and IEEE GEC Palakkad jointly hosted the launch of the World Map Explorer project.  This collaborative event brought together students, mentors, and esteemed guests to celebrate this groundbreaking initiative designed to improve accessibility for the visually impaired.

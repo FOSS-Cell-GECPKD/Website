@@ -214,9 +214,11 @@ html {
 .mobile-nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background: var(--background-color);
-    padding: 10px;
+    align-items: start;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .mobile-logo {
@@ -255,10 +257,6 @@ html {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     margin-top: 10px;
-    /* font-size: 32px; */
-    /* color: white; */
-    /* padding: 8px 0 8px 12px; */
-    /* margin-right: 5px; */
 }
 
 .mobile-menu-btn:hover,
@@ -344,11 +342,10 @@ html {
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     padding: 60px;
     width: 100%;
     max-width: 100%;
-    margin: 0 auto;
     position: relative;
     z-index: 10;
 }

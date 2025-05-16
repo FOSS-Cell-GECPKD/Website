@@ -1,0 +1,18 @@
+@keyframes play90 {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -126720px 0px;
+  }
+}
+.shapeshifter {
+  animation-duration: 1500ms;
+  animation-timing-function: steps(90);
+  width: 1408px;
+  height: 729px;
+  background-repeat: no-repeat;
+}
+.shapeshifter.play {
+  animation-name: play90;
+}

@@ -32,26 +32,38 @@
                 </div>
             </div>
         </div>
-        <div
-            v-motion
-            :initial="{ opacity: 0 }"
-            :enter="{ opacity: 1 }"
-            :transition="{ duration: 8000, ease: 'easeOut' }"
-            class="animation-container"
-        >
-            <img
-                src="/maker_crystal.gif"
-                alt="Maker Crystal"
-                class="fallback-image"
-            />
+        <div class="animation-container">
+            <div
+                ref="spriteAnim"
+                class="shapeshifter play"
+                :style="{ backgroundImage: `url(${spriteUrl})` }"
+            ></div>
         </div>
     </div>
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, ref, onMounted } from "vue";
 export default defineComponent({
     name: "MakersPage",
+    setup() {
+        const spriteAnim = ref(null);
+        const spriteUrl = ref("/maker-crystal/sprite_60fps.svg"); // Update this path as needed
+
+        onMounted(() => {
+            // Force animation restart
+            if (spriteAnim.value) {
+                spriteAnim.value.style.animation = "none";
+                void spriteAnim.value.offsetWidth; // Trigger reflow
+                spriteAnim.value.style.animation = "";
+            }
+        });
+
+        return {
+            spriteAnim,
+            spriteUrl,
+        };
+    },
 });
 </script>
 
@@ -151,31 +163,46 @@ export default defineComponent({
     width: 100%;
     height: 350px;
     position: relative;
-    overflow: hidden;
-    filter: drop-shadow(0px 4px 40px rgba(12, 205, 212, 0.35));
-    transition: filter 0.4s ease-in-out;
-}
-.fallback-image {
-    transform: scale(1.5);
-    transform-origin: 50% 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    background-color: transparent;
 }
 
-.animation {
+@keyframes play90 {
+    0% {
+        background-position: 0px 0px;
+        filter: drop-shadow(0px 4px 40px rgba(12, 205, 212, 0.35));
+    }
+    50% {
+        filter: drop-shadow(0px 4px 40px rgba(12, 205, 212, 0.7));
+    }
+    100% {
+        background-position: -126720px 0px;
+        filter: drop-shadow(0px 4px 40px rgba(12, 205, 212, 0.35));
+    }
+}
+
+.shapeshifter {
+    animation-duration: 3000ms;
+    animation-timing-function: steps(90);
+    width: 1408px;
+    height: 729px;
+    background-repeat: no-repeat;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    will-change: background-position; /* Optimize for animation */
+}
+
+.shapeshifter.play {
+    animation-name: play90;
+    animation-iteration-count: infinite;
 }
 
 @media (max-width: 768px) {
     .makers-intro {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
-        gap: 1.5rem;
+        gap: 4rem;
     }
 
     .terminal-body {
@@ -195,6 +222,14 @@ export default defineComponent({
     .animation-container {
         order: 2;
         height: 300px;
+    }
+
+    .shapeshifter {
+        transform: translate(-50%, -50%) scale(0.6);
+    }
+
+    .animation-container {
+        height: 250px;
     }
 }
 </style>

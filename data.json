@@ -152,7 +152,7 @@
       "tags": ["HTML", "Javascript", "Portfolio"],
       "githubLink": "https://github.com/ANUPAMA-JA29/portfolio",
       "projectLink": "https://anupama-ja29.github.io/portfolio/",
-      "image": "https://i.postimg.cc/T14WkxRL/Anupama-portfolio.png"
+      "image": "https://i.postimg.cc/Njpxgmv3/Portfolioo.jpg"
     },
     {
       "id": 13,
@@ -209,6 +209,16 @@
       "githubLink": "https://github.com/VishnuSanal/WhatsAppCleaner",
       "projectLink": "https://f-droid.org/packages/com.vishnu.whatsappcleaner/",
       "image": "https://i.postimg.cc/zDtCmPHR/whatsapp-cleaner.png"
+    },
+    {
+      "id": 18,
+      "studentName": "Anupama J A",
+      "projectName": "SpaceVoyager",
+      "description": "SpaceVoyager is a visually captivating website that explores iconic space missions, cosmic facts, legendary space pioneers, and Indian space achievements.Embark on a digital journey through the universe and discover the wonders of global and Indian space exploration.",
+      "tags": ["HTML", "CSS", "Javascript","Space"],
+      "githubLink": "https://github.com/ANUPAMA-JA29/SpaceVoyager",
+      "projectLink": "https://anupama-ja29.github.io/SpaceVoyager/index.html",
+      "image": "https://i.postimg.cc/YSRNXkj1/space-Voyager.jpg"
     }
   ]
 }

@@ -13,7 +13,8 @@ jobs:
   deploy:
     if: github.event.pull_request.merged == true || github.event_name == 'push'
     runs-on: ubuntu-latest
-    environment: FTP_SERVER
+    environment:
+      name: FTP_SERVER
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
